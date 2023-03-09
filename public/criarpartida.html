@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Criar Nova Partida</title>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="partida.html">Partida</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Criar Nova Partida</h2>
+      <form onsubmit="criarPartida(); return false;">
+        <label for="modo-de-jogo">Modo de Jogo:</label>
+        <select id="modo-de-jogo" name="modo-de-jogo">
+          <option value="1v1">1v1</option>
+          <option value="2v2">2v2</option>
+          <option value="3v3">3v3</option>
+          <option value="4v4">4v4</option>
+        </select>
+        <button type="submit">Criar Partida</button>
+      </form>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

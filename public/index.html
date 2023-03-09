@@ -68,6 +68,12 @@
       function criarPartida() {
         window.location.href = "criarpartida.html";
       }
+
+      var btnEncontrar = document.getElementById("btn-encontrar");
+      var btnCriar = document.getElementById("btn-criar");
+
+      btnEncontrar.addEventListener("click", redirecionarParaPartida);
+      btnCriar.addEventListener("click", criarPartida);
     </script>
   </body>
 </html>
