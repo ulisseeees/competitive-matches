@@ -4,32 +4,83 @@
     <title>Criar Nova Partida</title>
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+      body {
+        background-color: #2e2e2e;
+        color: #ffffff;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+      }
+
+      .container {
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 48px;
+        margin-top: 80px;
+      }
+
+      button {
+        background-color: #ffffff;
+        color: #2e2e2e;
+        border: none;
+        border-radius: 10px;
+        font-size: 24px;
+        font-weight: bold;
+        padding: 10px 20px;
+        margin-top: 40px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #a98eff;
+        color: #ffffff;
+      }
+
+      input[type="text"] {
+        padding: 10px;
+        margin-top: 20px;
+        font-size: 24px;
+        border: none;
+        border-radius: 10px;
+      }
+
+      ::placeholder {
+        color: #b3b3b3;
+      }
+    </style>
   </head>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="index.html">Início</a></li>
-          <li><a href="partida.html">Partida</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <main>
-      <h2>Criar Nova Partida</h2>
-      <form onsubmit="criarPartida(); return false;">
-        <label for="modo-de-jogo">Modo de Jogo:</label>
-        <select id="modo-de-jogo" name="modo-de-jogo">
+    <div class="container">
+      <h1>Criar Nova Partida</h1>
+      <form>
+        <label for="modo">Modo de Jogo:</label>
+        <select id="modo" name="modo">
           <option value="1v1">1v1</option>
           <option value="2v2">2v2</option>
           <option value="3v3">3v3</option>
           <option value="4v4">4v4</option>
+          <option value="5v5">5v5</option>
         </select>
-        <button type="submit">Criar Partida</button>
+        <br><br>
+        <button type="button" onclick="gerarIdPartida()">Criar Partida</button>
       </form>
-    </main>
+      <br>
+      <p id="id-partida"></p>
+    </div>
 
-    <script src="script.js"></script>
+    <script type="text/javascript">
+      function gerarIdPartida() {
+        var modo = document.getElementById("modo").value;
+        var idPartida = Math.floor(Math.random() * 1000000);
+
+        var mensagem = "Sua partida de " + modo + " foi criada com o ID " + idPartida + ". Compartilhe o ID com seus amigos para que eles possam se juntar à partida.";
+
+        document.getElementById("id-partida").textContent = mensagem;
+      }
+    </script>
   </body>
 </html>
