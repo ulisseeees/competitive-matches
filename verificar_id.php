@@ -1,33 +1,36 @@
 <?php
-// Conexão com o banco de dados
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "competitivematches";
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+if(isset($_POST['partida_id'])) {
+    $partida_id = $_POST['partida_id'];
 
-// Verificação se a conexão foi bem sucedida
-if (!$conn) {
-  die("Conexão falhou: " . mysqli_connect_error());
+    // Conectar ao banco de dados MySQL
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "competitivematches";
+    
+    // Cria a conexão
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    
+    // Verifica se a conexão foi bem sucedida
+    if (!$conn) {
+        die("Conexão falhou: " . mysqli_connect_error());
+    }
+    
+    // Executa a query para verificar se a partida existe
+    $sql = "SELECT * FROM partidas WHERE id = '$partida_id'";
+    $result = mysqli_query($conn, $sql);
+    
+    // Verifica se a query retornou resultados
+    if (mysqli_num_rows($result) > 0) {
+        // A partida existe
+        echo "Partida encontrada!";
+    } else {
+        // A partida não existe
+        echo "Partida não encontrada!";
+    }
+    
+    // Fecha a conexão
+    mysqli_close($conn);
 }
-
-// Recebimento do ID da partida do formulário
-$partida_id = $_POST["partida_id"];
-
-// Consulta ao banco de dados para verificar se a partida existe
-$sql = "SELECT * FROM partidas WHERE id = '$partida_id'";
-$result = mysqli_query($conn, $sql);
-
-// Verificação do resultado da consulta
-if (mysqli_num_rows($result) > 0) {
-  // A partida existe, redirecionamento para o lobby
-  header("Location: lobby.php?partida_id=".$partida_id);
-} else {
-  // A partida não existe, mensagem de erro
-  echo "Partida não encontrada";
-}
-
-// Fechamento da conexão com o banco de dados
-mysqli_close($conn);
 ?>
