@@ -1,0 +1,22 @@
+{
+  "name": "site",
+  "version": "1.5.7",
+  "description": "Competitive Matches",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ulisseeees/competitive-matches.git"
+  },
+  "author": "ulissesigx#0001",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ulisseeees/competitive-matches/issues"
+  },
+  "homepage": "https://github.com/ulisseeees/competitive-matches#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
