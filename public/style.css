@@ -4,47 +4,78 @@
 
 body {
   margin: 0;
-  font-family: Montserrat, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-color: #1e1e1e;
+  color: #fff;
 }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #a06ee1;
+  padding: 10px 20px;
 }
 
-h1 {
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin-left: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+}
+
+h2 {
   font-size: 36px;
-  text-align: center;
-  color: #a06ee1;
   margin-bottom: 20px;
 }
 
-#modos-menu {
-  text-align: center;
-  margin-top: 20px;
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 label {
-  display: block;
   font-size: 24px;
-  color: #a06ee1;
   margin-bottom: 10px;
 }
 
-select {
+input[type="text"] {
   padding: 10px;
   border-radius: 5px;
   border: none;
   font-size: 18px;
+  color: #333333;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  width: 50%;
 }
 
-#btn-iniciar {
-  margin-left: 10px;
+button[type="submit"] {
   padding: 10px;
   background-color: #a06ee1;
   color: #fff;
@@ -52,8 +83,9 @@ select {
   border-radius: 5px;
   font-size: 18px;
   cursor: pointer;
+  width: 150px;
 }
 
-#btn-iniciar:hover {
+button[type="submit"]:hover {
   background-color: #8f51c9;
 }
